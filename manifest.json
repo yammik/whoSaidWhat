@@ -1,0 +1,45 @@
+{
+
+	"manifest_version": 2,
+
+	"name": "WhoSaidWhat",
+	"description": "This extension adds the name of the first author and the year of publication of a published journal article to the clipboard whenever a part of the article is copied.",
+	"version": "1.0",
+
+	"browser_action": {
+		"default_icon": "icon48.png",
+		"default_popup": "WhoSaidWhat.html",
+		"default_title": "WhoSaidWhat"
+	},
+
+	"icons": { "16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon128.png" 
+      },
+
+	"permissions": [
+		"activeTab",
+		"tabs"
+	],
+
+	"content_scripts": [
+		{
+			"matches": [
+				"http://onlinelibrary.wiley.com/*", 
+				"http://www.sciencedirect.com/*", 
+				"https://www.ncbi.nlm.nih.gov/pmc/articles/*",
+				"https://www.ncbi.nlm.nih.gov/pubmed/*",
+				"http://jb.asm.org/content/*"
+
+			],
+			"js": ["modiClip.js"]
+		}
+	],
+
+	"background": {
+    "scripts": ["WhoSaidWhat.js"],
+    "persistent": true
+  	}
+
+
+}

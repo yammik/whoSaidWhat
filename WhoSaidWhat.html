@@ -1,0 +1,60 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Testing</title>
+    <style type="text/css">
+      body {
+        margin: 10px;
+        white-space: nowrap;
+      }
+
+      h1 {
+        font-size: 20px;
+        font-family: "Helvetica Neue";
+        font-weight: 100px;
+        line-height: 22px;
+      }
+
+      ul {
+        font-size: 12px;
+        font-family: "Helvetica Neue";
+        font-weight: 100px;
+      }
+
+      #container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+    -->
+    <script src="WhoSaidWhat.js"></script>
+  </head>
+
+  <body>
+    <h1>Click me to start citing!</h1>
+    <div id="container">
+      <span>Recognized sites:
+        <ul>
+          <li>Wiley Online Library</li>
+          <li>ScienceDirect</li>
+          <li>PubMed</li>
+          <li>PubMed Central (PMC)</li>
+          <li>ASM Journal of Bacteriology</li>
+        </ul>
+      </span>
+      <span>Click me again to close!</span>
+    </div>
+  </body>
+</html>
